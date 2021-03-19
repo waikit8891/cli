@@ -10,6 +10,7 @@ import (
 	"github.com/cli/cli/pkg/cmd/workflow/shared"
 )
 
+// TODO move to shared version once view pr merged
 func getWorkflowByID(client *api.Client, repo ghrepo.Interface, workflowID string) (*shared.Workflow, error) {
 	var workflow shared.Workflow
 
@@ -24,6 +25,7 @@ func getWorkflowByID(client *api.Client, repo ghrepo.Interface, workflowID strin
 	return &workflow, nil
 }
 
+// TODO move to shared version once view pr merged
 func getWorkflowsByName(client *api.Client, repo ghrepo.Interface, workflowName string) ([]shared.Workflow, error) {
 	workflows, err := shared.GetWorkflows(client, repo, 100)
 	if err != nil {

@@ -112,6 +112,7 @@ func TestNewCmdView(t *testing.T) {
 }
 
 func TestViewRun(t *testing.T) {
+	// TODO switch to shared once view PR merged
 	aWorkflow := shared.Workflow{
 		Name:  "a workflow",
 		ID:    123,

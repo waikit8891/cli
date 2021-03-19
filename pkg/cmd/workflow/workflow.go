@@ -1,6 +1,8 @@
 package workflow
 
 import (
+	cmdDisable "github.com/cli/cli/pkg/cmd/workflow/disable"
+	cmdEnable "github.com/cli/cli/pkg/cmd/workflow/enable"
 	cmdList "github.com/cli/cli/pkg/cmd/workflow/list"
 	cmdView "github.com/cli/cli/pkg/cmd/workflow/view"
 	"github.com/cli/cli/pkg/cmdutil"
@@ -20,6 +22,8 @@ func NewCmdWorkflow(f *cmdutil.Factory) *cobra.Command {
 
 	cmd.AddCommand(cmdList.NewCmdList(f, nil))
 	cmd.AddCommand(cmdView.NewCmdView(f, nil))
+	cmd.AddCommand(cmdEnable.NewCmdEnable(f, nil))
+	cmd.AddCommand(cmdDisable.NewCmdDisable(f, nil))
 
 	return cmd
 }

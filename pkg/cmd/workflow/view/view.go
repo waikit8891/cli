@@ -90,6 +90,7 @@ func runView(opts *ViewOptions) error {
 	var workflow *shared.Workflow
 
 	if opts.Prompt {
+		// TODO move to shared once view PR merged
 		workflow, err = promptWorkflows(client, repo)
 		if err != nil {
 			return err
@@ -97,6 +98,7 @@ func runView(opts *ViewOptions) error {
 	}
 
 	if workflow == nil {
+		// TODO move to shared once view PR merged
 		workflow, err = resolveWorkflow(opts.IO, client, repo, opts.WorkflowID)
 		if err != nil {
 			return err
